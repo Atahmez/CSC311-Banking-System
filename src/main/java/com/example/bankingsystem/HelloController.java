@@ -23,6 +23,12 @@ class BankingController {
 
     @FXML
     public void handleDeposit() {
+        String accountNumber = accountNumberField.getText();
+        if (accountNumber == null || accountNumber.trim().isEmpty()) {
+            showAlert("Missing Info", "Please enter your account number.");
+            return;
+        }
+
         try {
             double amount = Double.parseDouble(amountField.getText());
             if (amount > 0) {
@@ -39,6 +45,12 @@ class BankingController {
 
     @FXML
     public void handleWithdrawal() {
+        String accountNumber = accountNumberField.getText();
+        if (accountNumber == null || accountNumber.trim().isEmpty()) {
+            showAlert("Missing Info", "Please enter your account number.");
+            return;
+        }
+
         try {
             double amount = Double.parseDouble(amountField.getText());
             if (amount > 0 && amount <= balance) {
@@ -56,6 +68,8 @@ class BankingController {
     }
 
     private void logTransaction(String transaction) {
+        String account = accountNumberField.getText();
+        System.out.println("Transaction by Account: " + account + " - " + transaction);
         transactionLog.appendText(transaction + "\n");
         transactionLog.appendText("Current Balance: " + balance + "\n");
     }
