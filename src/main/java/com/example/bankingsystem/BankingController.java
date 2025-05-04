@@ -7,19 +7,24 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import java.util.Random;
 
-class BankingController {
+import java.util.Random;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class BankingController {
 
     @FXML
     private TextField accountNumberField;
+
     @FXML
     private TextField amountField;
+
     @FXML
     private TextArea transactionLog;
 
     private double balance = 1000.0; // Initial balance
-    private Random random = new Random();
+    private final Random random = new Random();
 
     @FXML
     public void handleDeposit() {
@@ -57,7 +62,7 @@ class BankingController {
                 balance -= amount;
                 logTransaction("Withdrawal: -" + amount);
                 fraudDetection(amount, "Withdrawal");
-            } else if (amount <= 0){
+            } else if (amount <= 0) {
                 showAlert("Invalid Amount", "Please enter a positive amount.");
             } else {
                 showAlert("Insufficient Funds", "You do not have enough funds.");
@@ -67,10 +72,18 @@ class BankingController {
         }
     }
 
+    @FXML
+    public void handleClear() {
+        accountNumberField.clear();
+        amountField.clear();
+        transactionLog.clear();
+    }
+
     private void logTransaction(String transaction) {
         String account = accountNumberField.getText();
-        System.out.println("Transaction by Account: " + account + " - " + transaction);
-        transactionLog.appendText(transaction + "\n");
+        String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println("Transaction by Account: " + account + " at " + time + " - " + transaction);
+        transactionLog.appendText(transaction + " at " + time + "\n");
         transactionLog.appendText("Current Balance: " + balance + "\n");
     }
 
@@ -82,19 +95,16 @@ class BankingController {
     }
 
     private void fraudDetection(double amount, String transactionType) {
-        // Simple fraud detection logic (can be improved significantly)
-        if (amount > 5000) { // Example: Large transaction
+        if (amount > 5000) {
             showAlert("Fraud Alert", "Large transaction detected: " + amount + " " + transactionType + ". Please verify.");
         }
 
-        if (random.nextDouble() < 0.01) { // 1% chance of a random fraud flag
+        if (random.nextDouble() < 0.01) {
             showAlert("Fraud Alert", "Unusual activity detected. Contact support.");
         }
-
-        // Example: Check for unusual patterns (e.g., rapid multiple small withdrawals)
-        // This would require more sophisticated tracking of previous transactions.
     }
 
     public void setAccountNumber(String username) {
+        // Currently unused. Can be used later for dynamic account binding.
     }
 }
