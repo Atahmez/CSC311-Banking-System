@@ -9,7 +9,8 @@ public class BankingApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/bankingsystem/hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/bankingsystem/welcome.fxml"));
+
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Banking System");
         stage.setScene(scene);
