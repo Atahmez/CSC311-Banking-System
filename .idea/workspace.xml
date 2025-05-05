@@ -150,7 +150,7 @@
       <workItem from="1746397746885" duration="14482000" />
       <workItem from="1746416667447" duration="6000" />
       <workItem from="1746416675206" duration="4854000" />
-      <workItem from="1746462186934" duration="14389000" />
+      <workItem from="1746462186934" duration="14570000" />
     </task>
     <task id="LOCAL-00001" summary="Added account number validation and transaction logging - Gopika">
       <option name="closed" value="true" />
@@ -216,7 +216,31 @@
       <option name="project" value="LOCAL" />
       <updated>1746486431785</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implement splash screen, welcome page, and login navigation flow">
+      <option name="closed" value="true" />
+      <created>1746486537550</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746486537550</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implement splash screen, welcome page, and login navigation flow">
+      <option name="closed" value="true" />
+      <created>1746486559400</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746486559400</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implement splash screen, welcome page, and login navigation flow">
+      <option name="closed" value="true" />
+      <created>1746486567412</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746486567412</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
