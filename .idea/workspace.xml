@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="720c95cc-c251-43f1-9ba6-032b9f6df764" name="Changes" comment="Added account number validation and transaction logging - Gopika">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/RegisterController.java" afterDir="false" />
+    <list default="true" id="720c95cc-c251-43f1-9ba6-032b9f6df764" name="Changes" comment="Registration page logic added with placeholder username check - Gopika">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/WelcomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/welcome.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -63,6 +66,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BankingApplication.executor": "Run",
+    "Database Script..executor": "Run",
     "Database Script.console_1.sql.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -86,11 +90,22 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="console_1.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
-      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/72e702a9-6646-496f-8001-b53586558993/console_1.sql" />
+  <component name="RunManager" selected="Application.BankingApplication">
+    <configuration name="BankingApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.bankingsystem.BankingApplication" />
+      <module name="CSC311-BankingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.bankingsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration type="DatabaseScript" editBeforeRun="true">
       <script-mode>FILE</script-mode>
-      <data-source id="72e702a9-6646-496f-8001-b53586558993" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -104,6 +119,11 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BankingApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -126,7 +146,9 @@
       <workItem from="1746369848319" duration="2040000" />
       <workItem from="1746393610499" duration="307000" />
       <workItem from="1746393920659" duration="2802000" />
-      <workItem from="1746397746885" duration="14088000" />
+      <workItem from="1746397746885" duration="14482000" />
+      <workItem from="1746416667447" duration="6000" />
+      <workItem from="1746416675206" duration="3709000" />
     </task>
     <task id="LOCAL-00001" summary="Added account number validation and transaction logging - Gopika">
       <option name="closed" value="true" />
@@ -136,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745199497742</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Registration page logic added with placeholder username check - Gopika">
+      <option name="closed" value="true" />
+      <created>1746416523472</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746416523472</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +174,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added account number validation and transaction logging - Gopika" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added account number validation and transaction logging - Gopika" />
+    <MESSAGE value="Registration page logic added with placeholder username check - Gopika" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registration page logic added with placeholder username check - Gopika" />
   </component>
 </project>
