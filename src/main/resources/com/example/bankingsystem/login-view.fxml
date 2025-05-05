@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.bankingsystem.LoginController"
-      spacing="10" alignment="CENTER" padding="20">
+      spacing="12" alignment="CENTER"
+      style="-fx-background-color: #f7f7f7;"
+      padding="24">
 
-    <Label text="Login" style="-fx-font-size: 24px;"/>
+    <!-- Title -->
+    <Label text="Login to Your Account"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
 
-    <TextField fx:id="usernameField" promptText="Username" />
-    <PasswordField fx:id="passwordField" promptText="Password" />
+    <!-- Username -->
+    <TextField fx:id="usernameField"
+               promptText="Username"
+               prefWidth="250"/>
 
-    <Button text="Login" onAction="#handleLogin" prefWidth="100" />
+    <!-- Password -->
+    <PasswordField fx:id="passwordField"
+                   promptText="Password"
+                   prefWidth="250"/>
+
+    <!-- Message/Error Label -->
+    <Label fx:id="messageLabel"
+           textFill="red"
+           wrapText="true"
+           maxWidth="250"/>
+
+    <!-- Login Button -->
+    <Button text="Login"
+            onAction="#handleLogin"
+            prefWidth="150"
+            style="-fx-font-size: 14px;"/>
+
 </VBox>

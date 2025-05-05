@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="720c95cc-c251-43f1-9ba6-032b9f6df764" name="Changes" comment="Created welcome.fxml with styled UI for the Banking System splash screen">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/login-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/register-view.fxml" afterDir="false" />
+    <list default="true" id="720c95cc-c251-43f1-9ba6-032b9f6df764" name="Changes" comment="login page">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/welcome.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +150,7 @@
       <workItem from="1746397746885" duration="14482000" />
       <workItem from="1746416667447" duration="6000" />
       <workItem from="1746416675206" duration="4854000" />
-      <workItem from="1746462186934" duration="617000" />
+      <workItem from="1746462186934" duration="2499000" />
     </task>
     <task id="LOCAL-00001" summary="Added account number validation and transaction logging - Gopika">
       <option name="closed" value="true" />
@@ -183,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746421433953</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="login page">
+      <option name="closed" value="true" />
+      <created>1746462823709</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746462823709</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +203,7 @@
     <MESSAGE value="Registration page logic added with placeholder username check - Gopika" />
     <MESSAGE value="Added welcome screen interface with navigation to main banking menu" />
     <MESSAGE value="Created welcome.fxml with styled UI for the Banking System splash screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created welcome.fxml with styled UI for the Banking System splash screen" />
+    <MESSAGE value="login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="login page" />
   </component>
 </project>

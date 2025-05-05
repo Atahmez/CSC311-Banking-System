@@ -9,19 +9,35 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.bankingsystem.WelcomeController"
-      spacing="20" alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom, #dfe9f3, #ffffff);" padding="40">
+      spacing="20"
+      alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #dfe9f3, #ffffff);">
+
+    <!-- padding around all edges -->
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
 
     <Label text="Banking System">
         <font>
-            <Font size="30" />
+            <Font size="30"/>
         </font>
         <VBox.margin>
-            <Insets bottom="10" />
+            <Insets bottom="10"/>
         </VBox.margin>
     </Label>
 
-    <Button text="Login" fx:id="loginButton" prefWidth="200" onAction="#handleLogin"/>
-    <Button text="Register" fx:id="registerButton" prefWidth="200" onAction="#handleRegister"/>
-    <Button text="Exit" fx:id="exitButton" prefWidth="200" onAction="#handleExit"/>
+    <Button text="Login"
+            fx:id="loginButton"
+            prefWidth="200"
+            onAction="#handleLogin"/>
+    <Button text="Register"
+            fx:id="registerButton"
+            prefWidth="200"
+            onAction="#handleRegister"/>
+    <Button text="Exit"
+            fx:id="exitButton"
+            prefWidth="200"
+            onAction="#handleExit"/>
 
 </VBox>
