@@ -12,7 +12,7 @@ public class WelcomeController {
     @FXML
     private void handleLogin(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/bankingsystem/login-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/bankingsystem/login-view.fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -26,7 +26,7 @@ public class WelcomeController {
     @FXML
     private void handleRegister(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/bankingsystem/register-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/bankingsystem/register-view.fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);

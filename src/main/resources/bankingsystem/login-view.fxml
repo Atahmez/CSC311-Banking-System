@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -10,13 +9,16 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.bankingsystem.LoginController"
-      spacing="12" alignment="CENTER"
-      style="-fx-background-color: #f7f7f7;"
-      padding="24">
+      alignment="CENTER"
+      spacing="10"
+      style="-fx-background-color: white; -fx-padding: 20;">
 
     <!-- Title -->
-    <Label text="Login to Your Account"
-           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Label text="Please Log In" style="-fx-font-size: 20px;">
+        <VBox.margin>
+            <Insets bottom="10"/>
+        </VBox.margin>
+    </Label>
 
     <!-- Username -->
     <TextField fx:id="usernameField"
@@ -28,16 +30,22 @@
                    promptText="Password"
                    prefWidth="250"/>
 
-    <!-- Message/Error Label -->
+    <!-- Error or Message -->
     <Label fx:id="messageLabel"
            textFill="red"
            wrapText="true"
            maxWidth="250"/>
 
-    <!-- Login Button -->
-    <Button text="Login"
+    <!-- Submit Button (go to next page) -->
+    <Button text="Submit"
             onAction="#handleLogin"
             prefWidth="150"
-            style="-fx-font-size: 14px;"/>
+            style="-fx-font-size: 14px;" />
+
+    <!-- Optional Cancel -->
+    <Button text="Cancel"
+            onAction="#handleCancel"
+            prefWidth="150"
+            style="-fx-font-size: 14px;" />
 
 </VBox>

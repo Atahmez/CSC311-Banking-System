@@ -35,7 +35,7 @@ public class LoginController {
         if ("admin".equals(username) && "admin123".equals(password)) {
             try {
                 FXMLLoader loader = new FXMLLoader(
-                        getClass().getResource("/com/example/bankingsystem/hello-view.fxml")
+                        getClass().getResource("/bankingsystem/hello-view.fxml")
                 );
                 Parent root = loader.load();
 
@@ -49,6 +49,23 @@ public class LoginController {
             }
         } else {
             messageLabel.setText("Invalid login credentials.");
+        }
+    }
+
+    @FXML
+    private void handleCancel(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/bankingsystem/welcome.fxml")
+            );
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Banking System — Welcome");
+            stage.show();
+        } catch (Exception e) {
+            messageLabel.setText("Failed to return to welcome screen.");
+            e.printStackTrace();
         }
     }
 }

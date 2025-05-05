@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.bankingsystem.SplashController"
+           fx:id="rootPane"
+           style="-fx-background-image: url('splashscreen.png');
+                  -fx-background-size: cover;
+                  -fx-background-position: center center;
+                  -fx-background-repeat: no-repeat;">
+
+    <!-- Spinner in the middle -->
+    <ProgressIndicator StackPane.alignment="CENTER"
+                       prefWidth="80" prefHeight="80"/>
+
+</StackPane>
