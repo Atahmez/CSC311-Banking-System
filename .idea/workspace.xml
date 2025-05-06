@@ -22,6 +22,12 @@
     <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -151,7 +157,8 @@
       <workItem from="1746416667447" duration="6000" />
       <workItem from="1746416675206" duration="4854000" />
       <workItem from="1746462186934" duration="14570000" />
-      <workItem from="1746486693283" duration="378000" />
+      <workItem from="1746486693283" duration="4075000" />
+      <workItem from="1746493081920" duration="1009000" />
     </task>
     <task id="LOCAL-00001" summary="Added account number validation and transaction logging - Gopika">
       <option name="closed" value="true" />
@@ -249,11 +256,62 @@
       <option name="project" value="LOCAL" />
       <updated>1746486700846</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Implement splash screen, welcome page, and login navigation flow">
+      <option name="closed" value="true" />
+      <created>1746487261543</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746487261543</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Implement splash screen, welcome page, and login navigation flow">
+      <option name="closed" value="true" />
+      <created>1746487299187</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746487299187</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Implement splash screen, welcome page, and login navigation flow">
+      <option name="closed" value="true" />
+      <created>1746488125606</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1746488125606</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Implement splash screen, welcome page, and login navigation flow">
+      <option name="closed" value="true" />
+      <created>1746488310068</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746488310068</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Implement splash screen, welcome page, and login navigation flow">
+      <option name="closed" value="true" />
+      <created>1746493102895</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746493102895</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added account number validation and transaction logging - Gopika" />
