@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="720c95cc-c251-43f1-9ba6-032b9f6df764" name="Changes" comment="Implement splash screen, welcome page, and login navigation flow">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/banking.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/banking.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

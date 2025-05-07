@@ -56,16 +56,20 @@ public class BankingApplication extends Application {
         splash.setScene(splashScene);
         splash.show();
 
-        // Create task to simulate loading bar and transition to login screen
+        // Here we create a task which will initialize the database
+        // We do this in a separate thread so that the UI is not blocked
         Task<Void> initTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
+                // We pass in a lambda to update the progress bar as the database is initialized
                 DatabaseManager.initializeDatabase((cur, tot) -> updateProgress(cur, tot));
                 return null;
             }
 
             @Override
             protected void succeeded() {
+                // Once the database is initialized, we close the splash screen
+                // and show the login screen
                 Platform.runLater(() -> {
                     splash.close();
                     showLoginScreen();
@@ -73,10 +77,15 @@ public class BankingApplication extends Application {
             }
         };
 
+        // We bind the progress bar to the task's progress property
+        // so that the progress bar updates as the database is initialized
         progressBar.progressProperty().bind(initTask.progressProperty());
+
+        // We start the task in a new thread
         new Thread(initTask, "db-init").start();
     }
 
+    // This method shows the login screen
     private void showLoginScreen() {
         try {
             LoginScreen loginScreen = new LoginScreen(primaryStage);

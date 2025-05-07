@@ -55,9 +55,33 @@
              <padding>
                  <Insets top="5" bottom="5"/>
              </padding>
-             <Button fx:id="dashboardNavButton" text="Dashboard" styleClass="nav-button" onAction="#handleNavDashboard" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
-             <Button fx:id="createNavButton" text="Create" styleClass="nav-button" onAction="#handleNavCreate" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
-             <Button fx:id="settingsNavButton" text="Settings" styleClass="nav-button" onAction="#handleNavSettings" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+             <Button fx:id="dashboardNavButton" styleClass="nav-button" onAction="#handleNavDashboard" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                 <graphic>
+                     <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                         <image>
+                             <Image url="@icons/dashboard_icon.png" />
+                         </image>
+                     </ImageView>
+                 </graphic>
+             </Button>
+             <Button fx:id="createNavButton" styleClass="nav-button" onAction="#handleNavCreate" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                 <graphic>
+                     <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                         <image>
+                             <Image url="@icons/create_icon.png" />
+                         </image>
+                     </ImageView>
+                 </graphic>
+             </Button>
+             <Button fx:id="settingsNavButton" styleClass="nav-button" onAction="#handleNavSettings" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+                 <graphic>
+                     <ImageView fitHeight="24" fitWidth="24" preserveRatio="true">
+                         <image>
+                             <Image url="@icons/settings_icon.png" />
+                         </image>
+                     </ImageView>
+                 </graphic>
+             </Button>
         </HBox>
     </bottom>
 
