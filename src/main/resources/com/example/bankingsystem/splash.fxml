@@ -4,7 +4,6 @@
 
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:controller="com.example.bankingsystem.SplashController"
            fx:id="rootPane"
            style="-fx-background-image: url('splashscreen.png');
                   -fx-background-size: cover;

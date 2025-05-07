@@ -5,40 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="720c95cc-c251-43f1-9ba6-032b9f6df764" name="Changes" comment="Implement splash screen, welcome page, and login navigation flow">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/GenerateReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/GenerateReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/ManualCheckEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/ManualCheckEntryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/ReportViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/ReportViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/SavedReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/SavedReportsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/LandingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/LandingScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/LoginScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/RegistrationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/RegistrationScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/banking.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/farmingdalechecks.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/generate_report.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/head.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/headtext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/login-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/manual_check_entry.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/register-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/register.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/register2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/report_view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/saved_reports.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/settings.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/splash.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/splashscreen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/welcome.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/generate_report.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/generate_report.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/manual_check_entry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/manual_check_entry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/register-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/register-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/report_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/report_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/saved_reports.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/saved_reports.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/splash.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/splash.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/bankingsystem/welcome.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
