@@ -8,11 +8,12 @@ import java.sql.Statement;
 import java.util.function.BiConsumer;
 import com.example.bankingsystem.model.SavedReportData;
 import com.example.bankingsystem.model.CheckData;
-import com.example.bankingsystem.model.SavedReportData;
 import com.example.bankingsystem.model.User;
+
 /** Handles connection & schema setup for the SQLite database. */
 public final class DatabaseManager {
 
+    // The connection string for the local SQLite da
     private static final String DB_URL = "jdbc:sqlite:banking.db";
 
     private DatabaseManager() {}

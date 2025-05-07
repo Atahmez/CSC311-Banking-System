@@ -12,5 +12,6 @@ module com.example.bankingsystem {
     requires java.sql;
 
     opens com.example.bankingsystem to javafx.fxml;
+    opens com.example.bankingsystem.controller to javafx.fxml;
     exports com.example.bankingsystem;
 }
