@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc311bankingsystem.controller.ReportViewController"
+            prefHeight="700.0" prefWidth="500.0" styleClass="main-container">
+
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label fx:id="reportTitleLabel" text="Generated Report" styleClass="dashboard-title"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Dashboard" onAction="#handleBackToDashboard" styleClass="primary-button"/>
+            <Button text="Back" onAction="#handleBackToGenerator" styleClass="secondary-button"/> 
+        </HBox>
+    </top>
+
+    <!-- Center Content: Report Table -->
+    <center>
+        <VBox spacing="10" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" right="15" bottom="20" left="15"/> <!-- Reduced horizontal padding slightly for table -->
+            </padding>
+
+            <TableView fx:id="reportTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="checkNumberCol" text="Check #" prefWidth="75"/>
+                    <TableColumn fx:id="dateCol" text="Date" prefWidth="80" />
+                    <TableColumn fx:id="payeeCol" text="Payee" prefWidth="150" />
+                    <TableColumn fx:id="amountCol" text="Amount" prefWidth="80" style="-fx-alignment: CENTER-RIGHT;"/>
+                    <TableColumn fx:id="statusCol" text="Status" prefWidth="70" style="-fx-alignment: CENTER;"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+            
+            <!-- Optional: Add summary info or export button here -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                 <Label fx:id="summaryLabel" text="" styleClass="form-label"/>
+                 <!-- <Button text="Export CSV" onAction="#handleExport" styleClass="secondary-button"/> -->
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane> 

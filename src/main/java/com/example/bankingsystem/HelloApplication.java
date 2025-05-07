@@ -1,22 +1,88 @@
 package com.example.bankingsystem;
 
+import com.example.bankingsystem.screens.LoginScreen;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class HelloApplication extends Application {
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("Banking System");
-        stage.setScene(scene);
-        stage.show();
-    }
+    private static final int SPLASH_WIDTH = 600;
+    private static final int SPLASH_HEIGHT = 400;
+    private Stage primaryStage;
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
+    }
+
+    // main entrypoint to the application
+    @Override
+    public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+
+        // Create splash screen layout
+        // todo: its buggy on my mac at initial load
+        Image image = new Image(HelloApplication.class.getResourceAsStream("farmingdalechecks.png"));
+        ImageView logoView = new ImageView(image);
+        logoView.setFitWidth(300);
+        logoView.setPreserveRatio(true);
+
+        Label loadingLabel = new Label("Farmingdale State College Alumni Portal");
+        loadingLabel.setId("splash-loading-label");
+
+        ProgressBar progressBar = new ProgressBar();
+        progressBar.setPrefWidth(SPLASH_WIDTH - 60);
+
+        VBox root = new VBox(20, logoView,
+                new Label("Farmingdale State College Alumni Portal"), progressBar);
+        root.setAlignment(Pos.CENTER);
+        root.setPrefSize(SPLASH_WIDTH, SPLASH_HEIGHT);
+
+        // Create splash scene
+        Scene splashScene = new Scene(root);
+        splashScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+
+        // Configure splash stage
+        Stage splash = new Stage(StageStyle.UNDECORATED);
+        splash.setScene(new Scene(root));
+        splash.show();
+
+        // Create task to simulate loading bar and transition to login screen
+        Task<Void> initTask = new Task<>() {
+            @Override
+            protected Void call() throws Exception {
+                DatabaseManager.initializeDatabase((cur, tot) -> updateProgress(cur, tot));
+                return null;
+            }
+
+            @Override
+            protected void succeeded() {
+                Platform.runLater(() -> {
+                    splash.close();
+                    showLoginScreen();
+                });
+            }
+        };
+
+        progressBar.progressProperty().bind(initTask.progressProperty());
+        new Thread(initTask, "db-init").start();
+    }
+
+    private void showLoginScreen() {
+        try {
+            LoginScreen loginScreen = new LoginScreen(primaryStage);
+            loginScreen.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

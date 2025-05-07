@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc311bankingsystem.controller.SavedReportsController"
+            prefHeight="700.0" prefWidth="500.0" styleClass="main-container">
+
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Saved Reports" styleClass="dashboard-title"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Back" onAction="#handleBack" styleClass="secondary-button"/>
+        </HBox>
+    </top>
+
+    <!-- Center Content: List of Reports -->
+    <center>
+        <VBox spacing="10" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" right="30" bottom="20" left="30"/>
+            </padding>
+
+            <ListView fx:id="savedReportsListView" VBox.vgrow="ALWAYS"/>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="viewReportButton" text="View Selected Report" onAction="#handleViewReport" styleClass="primary-button" disable="true"/>
+                <Button fx:id="deleteReportButton" text="Delete Selected" onAction="#handleDeleteReport" styleClass="secondary-button" disable="true"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane> 

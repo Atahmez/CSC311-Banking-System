@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc311bankingsystem.controller.GenerateReportController"
+            prefHeight="700.0" prefWidth="500.0" styleClass="main-container">
+
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Generate Report" styleClass="dashboard-title"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Cancel" onAction="#handleCancel" styleClass="secondary-button"/>
+        </HBox>
+    </top>
+
+    <!-- Center Content: Report Options -->
+    <center>
+        <VBox spacing="15" alignment="TOP_LEFT">
+            <padding>
+                <Insets top="30" right="40" bottom="30" left="40"/>
+            </padding>
+
+            <!-- Report Options -->
+            <Label text="Report Type:" styleClass="form-label"/>
+            <ComboBox fx:id="reportTypeComboBox" promptText="Select report type" maxWidth="Infinity">
+                <!-- Items will be added in the controller -->
+            </ComboBox>
+
+            <Label text="Start Date:" styleClass="form-label"/>
+            <DatePicker fx:id="startDatePicker" promptText="Select start date" maxWidth="Infinity"/>
+
+            <Label text="End Date:" styleClass="form-label"/>
+            <DatePicker fx:id="endDatePicker" promptText="Select end date" maxWidth="Infinity"/>
+            
+            <Label text="Filter by Status (Optional):" styleClass="form-label"/>
+            <ComboBox fx:id="statusFilterComboBox" promptText="All Statuses" maxWidth="Infinity">
+                 <!-- Items will be added in the controller -->
+            </ComboBox>
+
+            <CheckBox fx:id="saveReportCheckBox" text="Save report criteria" selected="false"/>
+
+            <Region VBox.vgrow="ALWAYS" /> <!-- Pushes button to bottom -->
+
+            <Button fx:id="generateButton" text="Generate Report" onAction="#handleGenerateReport" styleClass="primary-button" maxWidth="Infinity"/>
+
+        </VBox>
+    </center>
+
+</BorderPane> 

@@ -1,0 +1,518 @@
+/* Global styles */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 14px;
+    -base-color: #3B5998; /* Main blue */
+    -accent-color: #2d4373; /* Darker blue for hover */
+    -background-color: #F0F2F5; /* Light grey page background */
+    -container-background-color: #FFFFFF; /* White for input areas/cards */
+    -text-color: #1c1e21; /* Primary text */
+    -secondary-text-color: #606770; /* Lighter text for prompts/links */
+    -border-color: #ced0d4; /* Standard border */
+    -error-color: #dc3545; /* Red for errors */
+    -success-color: #28a745; /* Green for success */
+    -warning-color: #ffc107; /* Yellow for warnings */
+}
+
+/* === Containers === */
+.login-container,
+.registration-container {
+    -fx-background-color: -background-color; /* Use global page background */
+    -fx-border-width: 0;
+    -fx-effect: none;
+    -fx-max-width: 380px; /* Consistent max width */
+    -fx-padding: 40px 50px; /* Consistent padding */
+}
+
+/* Optional: Add a card-like effect within the container if desired */
+.form-card {
+    -fx-background-color: -container-background-color;
+    -fx-padding: 30px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.5, 0, 1);
+}
+
+.text-area {
+    -fx-pref-height: 80px; /* Default height for text areas */
+    -fx-wrap-text: true;
+    -fx-background-color: -accent-color;
+}
+
+.secondary-button {
+    -fx-background-color: #E4E6EB; /* Light grey */
+    -fx-text-fill: -text-color; /* Dark text */
+    -fx-cursor: hand;
+    -fx-padding: 8px 15px; /* Added padding */
+    -fx-background-radius: 6px; /* Added radius */
+    -fx-border-radius: 6px; /* Added radius */
+    -fx-font-size: 14px; /* Match text field size */
+}
+
+.secondary-button:hover {
+    -fx-background-color: #DCDFE4; /* Slightly darker grey */
+}
+
+/* === Links === */
+.hyperlink, /* Default hyperlink style */
+.link-button { /* Specific class for link-like controls */
+    -fx-text-fill: -base-color;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.hyperlink:hover,
+.link-button:hover {
+    -fx-underline: true;
+}
+
+/* === Progress Bar === */
+.progress-bar {
+    -fx-accent: -base-color; /* Use theme color for progress */
+}
+
+.progress-bar .bar {
+    -fx-padding: 1px; /* Fine-tune appearance */
+}
+
+.progress-bar .track {
+    -fx-background-color: #e0e0e0; /* Lighter track color */
+    -fx-background-radius: 3px;
+}
+
+/* === Splash Screen === */
+.splash-screen {
+    -fx-background-color: -container-background-color;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+/* Style for the label on the splash screen */
+#splash-loading-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-color; /* Use theme text color */
+}
+
+/* === Banking Screen Specific (Keep or adjust) === */
+.transaction-log {
+    -fx-font-family: "Monospaced";
+    -fx-background-color: #ffffff;
+    -fx-border-color: -border-color;
+    /* Inherits .text-area styles */
+}
+
+#fraudResultArea {
+    -fx-font-weight: bold;
+    -fx-background-color: -container-background-color;
+    -fx-border-color: transparent;
+    /* Inherits .text-area styles */
+}
+
+/* Remove old/unused styles */
+/* Removed: .forgot-password-link, .register-link */
+/* Removed specific .login-button styles (merged into .primary-button) */
+/* Removed specific .form-field content (now uses .text-field) */
+
+/* Landing Screen Styles (Keep or adjust) */
+.main-container {
+    -fx-background-color: -background-color;
+}
+
+.data-table {
+    -fx-base: -container-background-color;
+    -fx-control-inner-background: -container-background-color;
+    -fx-table-cell-border-color: -border-color;
+    -fx-table-header-border-color: -border-color;
+    -fx-padding: 0;
+}
+
+.data-table .column-header-background {
+    -fx-background-color: derive(-container-background-color, -5%); /* Slightly darker than container bg */
+}
+
+.data-table .column-header, .data-table .filler {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 1px 1px 0;
+    -fx-border-color: -border-color;
+    -fx-text-fill: -text-color;
+    -fx-padding: 8px;
+}
+
+.data-table .table-row-cell {
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #eeeeee;
+}
+
+.data-table .table-row-cell:odd {
+    -fx-background-color: derive(-container-background-color, -2%);
+}
+
+.data-table .table-row-cell:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.status-bar {
+    -fx-background-color: #f0f0f0;
+    -fx-border-width: 1px 0 0 0;
+    -fx-border-color: -border-color;
+}
+
+/* === New Dashboard Styles === */
+
+.header {
+    -fx-background-color: -container-background-color; /* White header */
+    /* Add a subtle bottom border if desired */
+    /* -fx-border-width: 0 0 1px 0; */
+    /* -fx-border-color: -border-color; */
+}
+
+.profile-button {
+    -fx-background-color: #E4E6EB; /* Light grey circle */
+    -fx-text-fill: -secondary-text-color; /* Icon color */
+    -fx-shape: "M 15 0 A 15 15 0 1 1 14.99 0 Z"; /* Make it round */
+    -fx-background-radius: 5em; /* Ensure roundness */
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+    -fx-padding: 0;
+    -fx-font-size: 16px; /* Adjust icon size */
+}
+
+.profile-button:hover {
+    -fx-background-color: #DCDFE4;
+}
+
+.dashboard-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-color;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 10px 0; /* Padding below title */
+}
+
+.action-button {
+    -fx-background-color: -container-background-color;
+    -fx-text-fill: -text-color;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER; /* Change alignment to center */
+    -fx-padding: 15px;
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-border-color: transparent; /* No border by default */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0.2, 0, 1);
+    -fx-pref-height: 100px; /* Match row constraints */
+    /* Removed pref-width to allow grid pane to manage width */
+    -fx-wrap-text: true;
+    -fx-line-spacing: 5px;
+    -fx-text-alignment: CENTER; /* Ensure text wraps centrally */
+}
+
+.action-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0.3, 0, 2); /* Slightly softer, more spread shadow */
+    -fx-background-color: derive(-container-background-color, -2%); /* Slightly darken background on hover */
+    -fx-border-color: transparent; /* Keep border transparent on hover */
+    /* -fx-border-color: -border-color; */ /* Removed border on hover */
+    /* -fx-border-width: 1px; */
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-color;
+    -fx-padding: 15px 0 5px 0; /* Padding around title */
+}
+
+.recent-activity-section {
+    /* Optional styling for the VBox containing recent activity */
+}
+
+.activity-item {
+    -fx-background-color: -container-background-color;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 5, 0.1, 0, 1);
+}
+
+.activity-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: normal;
+    -fx-text-fill: -text-color;
+}
+
+.activity-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: -secondary-text-color;
+}
+
+.status-badge {
+    -fx-font-size: 12px;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 6px;
+    -fx-font-weight: bold;
+}
+
+.status-clear {
+    -fx-background-color: derive(-success-color, 75%); /* Light green background */
+    -fx-text-fill: derive(-success-color, -20%); /* Darker green text */
+}
+
+.status-flagged {
+    -fx-background-color: derive(-warning-color, 80%); /* Light yellow background */
+    -fx-text-fill: derive(-warning-color, -40%); /* Darker yellow text */
+}
+
+.bottom-nav {
+    -fx-background-color: -container-background-color;
+    -fx-border-width: 1px 0 0 0;
+    -fx-border-color: -border-color;
+    -fx-padding: 5px 0; /* Padding top/bottom */
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -secondary-text-color; /* Default grey */
+    -fx-font-size: 11px;
+    -fx-padding: 5px 0; /* Adjust padding */
+    -fx-graphic-text-gap: 2px;
+    -fx-min-width: 0; /* Allow buttons to shrink */
+    -fx-pref-height: 50px; /* Consistent height */
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: transparent;
+    -fx-effect: null;
+}
+
+.nav-button:hover {
+    -fx-text-fill: -text-color; /* Darker text on hover */
+}
+
+.nav-button-active {
+    -fx-text-fill: -base-color; /* Blue text for active */
+    -fx-font-weight: bold; /* Make active bold */
+}
+
+/* === End Dashboard Styles === */
+
+/* === Form Styles === */
+
+/* Shared styles for form input fields */
+.text-field, .date-picker, .combo-box {
+    -fx-background-color: -container-background-color;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px; /* Slightly more rounded */
+    -fx-padding: 8px 10px; /* Consistent padding */
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .date-picker:focused, .combo-box:focused {
+    -fx-border-color: -base-color;
+    -fx-effect: dropshadow(gaussian, derive(-base-color, 70%), 4, 0.2, 0, 0); /* Subtle focus glow */
+}
+
+.form-label {
+    -fx-font-size: 14px; /* Increased size */
+    -fx-font-weight: bold; /* Made bold */
+    -fx-text-fill: -text-color; /* Darker text */
+    -fx-padding: 8px 0 0px 2px; /* Reduced bottom padding to 0 */
+    -fx-alignment: center-left;
+}
+
+/* Specific DatePicker styling */
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0; /* Remove padding from internal text field */
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 8px; /* Match input padding */
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: -secondary-text-color;
+}
+
+/* Specific ComboBox styling */
+.combo-box {
+    /* Ensure the main box uses theme colors */
+    -fx-background-color: -container-background-color;
+    -fx-border-color: -border-color;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: -container-background-color; /* Use theme background */
+    -fx-text-fill: -text-color; /* Use theme text color */
+    -fx-padding: 5px 10px;
+}
+
+.combo-box .list-cell:filled:hover {
+    -fx-background-color: derive(-container-background-color, -10%); /* Slightly darker background on hover */
+    -fx-text-fill: -text-color;
+}
+
+.combo-box .list-cell:filled:selected {
+    -fx-background-color: -base-color; /* Theme base color for selection */
+    -fx-text-fill: white; /* White text for selection */
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: -container-background-color; /* Theme background for the popup */
+    -fx-border-color: -border-color; /* Theme border for the popup */
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
+    -fx-padding: 0; /* Remove extra padding */
+}
+
+/* Style the arrow button */
+.combo-box .arrow-button {
+    -fx-background-color: -container-background-color;
+    -fx-padding: 8px; 
+}
+
+.combo-box .arrow-button .arrow {
+    -fx-background-color: -secondary-text-color;
+}
+
+/* Ensure focused state matches other inputs */
+.combo-box:focused {
+    -fx-border-color: -base-color;
+    -fx-effect: dropshadow(gaussian, derive(-base-color, 70%), 4, 0.2, 0, 0); 
+}
+
+/* === Primary Button (like Login/Register) === */
+.primary-button {
+    -fx-background-color: -base-color; /* Blue */
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: -accent-color; /* Darker blue */
+}
+
+/* === Destructive Button (like Delete) === */
+.destructive-button {
+    -fx-background-color: -error-color; /* Red */
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.destructive-button:hover {
+    -fx-background-color: derive(-error-color, -15%); /* Darker red */
+}
+
+/* === ListView Styling === */
+.list-view {
+    -fx-background-color: -container-background-color;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
+    -fx-padding: 1px; /* Add 1px padding to prevent cell border overlap */
+}
+
+.list-view .list-cell {
+    -fx-background-color: -container-background-color;
+    -fx-text-fill: -text-color;
+    -fx-padding: 8px 12px; /* Consistent padding */
+    -fx-border-width: 0 0 1px 0; /* Bottom border only */
+    -fx-border-color: derive(-border-color, 50%); /* Lighter border between cells */
+}
+
+.list-view .list-cell:filled:selected, 
+.list-view .list-cell:filled:selected:focused {
+    -fx-background-color: -base-color; /* Theme color for selection */
+    -fx-text-fill: white;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: derive(-container-background-color, -5%); /* Subtle hover */
+}
+
+.list-view:focused {
+    -fx-border-color: -base-color; /* Focus border for the whole list */
+}
+
+/* === TableView Styling === */
+.table-view {
+    -fx-background-color: -container-background-color;
+    -fx-border-color: -border-color;
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
+    -fx-padding: 0; /* TableView handles padding internally */
+}
+
+/* Column Headers */
+.table-view .column-header-background {
+    -fx-background-color: derive(-container-background-color, -5%); /* Slightly darker header */
+}
+
+.table-view .column-header,
+.table-view .column-header .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-color;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 10px; /* Header padding */
+    -fx-border-color: transparent -border-color transparent transparent; /* Right border only */
+    -fx-border-width: 0 1px 0 0;
+}
+
+.table-view .column-header:last-visible {
+    -fx-border-width: 0; /* No border on last header */
+}
+
+/* Table Cells */
+.table-view .table-cell {
+    -fx-padding: 6px 10px; /* Cell padding */
+    -fx-border-color: transparent derive(-border-color, 50%) transparent transparent; /* Right border only, lighter */
+    -fx-border-width: 0 1px 0 0;
+}
+
+.table-view .table-cell:last-visible {
+    -fx-border-width: 0; /* No border on last cell in row */
+}
+
+/* Alternating Row Colors */
+.table-row-cell:odd {
+    -fx-background-color: derive(-container-background-color, -2%);
+}
+.table-row-cell:even {
+    -fx-background-color: -container-background-color;
+}
+
+/* Selection */
+.table-row-cell:filled:selected, 
+.table-row-cell:filled:selected:focused {
+    -fx-background-color: -base-color;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:filled:selected .table-cell,
+.table-row-cell:filled:selected:focused .table-cell {
+    -fx-text-fill: white; /* Ensure text in selected cells is white */
+    -fx-border-color: transparent; /* Hide cell borders on selection */
+}
+
+/* Focus */
+.table-view:focused {
+     -fx-border-color: -base-color;
+}

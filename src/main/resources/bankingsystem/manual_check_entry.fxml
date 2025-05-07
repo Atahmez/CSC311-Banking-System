@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc311bankingsystem.controller.ManualCheckEntryController"
+            prefHeight="700.0" prefWidth="500.0" styleClass="main-container">
+
+    <!-- Header (Optional - Can be simple) -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Manual Check Entry" styleClass="dashboard-title"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Cancel" onAction="#handleCancel" styleClass="secondary-button"/>
+        </HBox>
+    </top>
+
+    <!-- Center Content: Form -->
+    <center>
+        <VBox spacing="15" alignment="TOP_LEFT">
+            <padding>
+                <Insets top="30" right="40" bottom="30" left="40"/>
+            </padding>
+
+            <!-- Form Fields -->
+            <Label text="Check Number:" styleClass="form-label"/>
+            <TextField fx:id="checkNumberField" promptText="e.g., 1001" styleClass="text-field"/>
+
+            <Label text="Payee:" styleClass="form-label"/>
+            <TextField fx:id="payeeField" promptText="Enter payee name" styleClass="text-field"/>
+
+            <Label text="Amount:" styleClass="form-label"/>
+            <TextField fx:id="amountField" promptText="e.g., 123.45" styleClass="text-field"/>
+
+            <Label text="Date:" styleClass="form-label"/>
+            <DatePicker fx:id="datePicker" promptText="Select date" styleClass="date-picker" maxWidth="Infinity"/>
+
+            <Label text="Memo (Optional):" styleClass="form-label"/>
+            <TextField fx:id="memoField" promptText="Enter memo" styleClass="text-field"/>
+
+            <Region VBox.vgrow="ALWAYS" /> <!-- Pushes button to bottom -->
+
+            <Button fx:id="submitButton" text="Submit Check" onAction="#handleSubmitCheck" styleClass="primary-button" maxWidth="Infinity"/>
+
+        </VBox>
+    </center>
+
+</BorderPane> 

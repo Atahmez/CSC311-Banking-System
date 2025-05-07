@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc311bankingsystem.BankingController" 
+            prefHeight="700.0" prefWidth="500.0" styleClass="main-container">
+
+    <!-- Main Content Area -->
+    <center>
+        <VBox spacing="20" alignment="TOP_LEFT">
+            <padding>
+                <Insets top="20" right="30" bottom="20" left="30"/>
+            </padding>
+
+            <Label text="Dashboard" styleClass="dashboard-title"/>
+
+            <!-- Action Buttons Grid -->
+            <GridPane hgap="15" vgap="15" alignment="CENTER">
+                <Button fx:id="newCheckButton" text="New Check Entry" styleClass="action-button" alignment="CENTER" onAction="#handleNewCheckEntry" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity"/>
+                <Button fx:id="generateReportButton" text="Generate Report" styleClass="action-button" alignment="CENTER" onAction="#handleGenerateReport" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
+                <Button fx:id="savedReportsButton" text="Saved Reports" styleClass="action-button" alignment="CENTER" onAction="#handleSavedReports" GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity"/>
+                <Button fx:id="settingsButton" text="Settings" styleClass="action-button" alignment="CENTER" onAction="#handleSettings" GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity"/>
+            
+                 <columnConstraints>
+                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="100.0" valignment="CENTER" vgrow="SOMETIMES" />
+                 </rowConstraints>
+            </GridPane>
+
+            <!-- Recent Activity -->
+            <VBox spacing="10" styleClass="recent-activity-section">
+                <Label text="Recent Activity" styleClass="section-title"/>
+                <ScrollPane fx:id="activityScrollPane" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" style="-fx-background-color: transparent;">
+                    <VBox fx:id="recentActivityBox" spacing="10">
+                        <!-- Activity items will be added here dynamically -->
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+
+        </VBox>
+    </center>
+
+    <!-- Bottom Navigation -->
+    <bottom>
+        <HBox alignment="CENTER" styleClass="bottom-nav">
+             <padding>
+                 <Insets top="5" bottom="5"/>
+             </padding>
+             <Button fx:id="dashboardNavButton" text="Dashboard" styleClass="nav-button" onAction="#handleNavDashboard" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+             <Button fx:id="createNavButton" text="Create" styleClass="nav-button" onAction="#handleNavCreate" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+             <Button fx:id="settingsNavButton" text="Settings" styleClass="nav-button" onAction="#handleNavSettings" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+        </HBox>
+    </bottom>
+
+</BorderPane> 

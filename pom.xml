@@ -140,7 +140,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.bankingsystem/com.example.bankingsystem.HelloApplication</mainClass>
+                            <mainClass>com.example.bankingsystem/com.example.bankingsystem.BankingApplication</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

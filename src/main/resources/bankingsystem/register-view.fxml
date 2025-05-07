@@ -7,13 +7,20 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.bankingsystem.RegisterController"
-      spacing="10" alignment="CENTER" padding="20">
+      spacing="10" alignment="CENTER"
+      style="-fx-background-color: white; -fx-padding: 20;" 
+      prefWidth="400" prefHeight="350">
 
-    <Label text="Register" style="-fx-font-size: 24px;" />
+    <Label text="Register" style="-fx-font-size: 20px;">
+        <VBox.margin>
+            <Insets bottom="10"/>
+        </VBox.margin>
+    </Label>
 
-    <TextField fx:id="usernameField" promptText="Username" />
-    <PasswordField fx:id="passwordField" promptText="Password" />
+    <TextField fx:id="usernameField" promptText="Username" prefWidth="250"/>
+    <PasswordField fx:id="passwordField" promptText="Password" prefWidth="250"/>
 
-    <Button text="Register" onAction="#registerUser" prefWidth="100" />
-    <Label fx:id="messageLabel" />
+    <Label fx:id="messageLabel" textFill="red" wrapText="true" maxWidth="250"/>
+    <Button text="Register" onAction="#registerUser" prefWidth="150" style="-fx-font-size: 14px;" />
+    <Button text="Back" onAction="#handleBackToWelcome" prefWidth="150" style="-fx-font-size: 14px;" />
 </VBox>
