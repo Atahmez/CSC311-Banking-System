@@ -14,7 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class HelloApplication extends Application {
+public class BankingApplication extends Application {
 
     private static final int SPLASH_WIDTH = 600;
     private static final int SPLASH_HEIGHT = 400;
@@ -31,7 +31,7 @@ public class HelloApplication extends Application {
 
         // Create splash screen layout
         // todo: its buggy on my mac at initial load
-        Image image = new Image(HelloApplication.class.getResourceAsStream("farmingdalechecks.png"));
+        Image image = new Image(BankingApplication.class.getResourceAsStream("farmingdalechecks.png"));
         ImageView logoView = new ImageView(image);
         logoView.setFitWidth(300);
         logoView.setPreserveRatio(true);
@@ -49,11 +49,11 @@ public class HelloApplication extends Application {
 
         // Create splash scene
         Scene splashScene = new Scene(root);
-        splashScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+        splashScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
 
         // Configure splash stage
         Stage splash = new Stage(StageStyle.UNDECORATED);
-        splash.setScene(new Scene(root));
+        splash.setScene(splashScene);
         splash.show();
 
         // Create task to simulate loading bar and transition to login screen

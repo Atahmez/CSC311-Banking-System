@@ -1,7 +1,7 @@
 package com.example.bankingsystem.screens;
 
 import com.example.bankingsystem.BankingController;
-import com.example.bankingsystem.HelloApplication;
+import com.example.bankingsystem.BankingApplication;
 import com.example.bankingsystem.model.User;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -13,9 +13,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import com.example.bankingsystem.service.MockCheckService;
+import com.example.bankingsystem.DatabaseManager;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class LoginScreen {
 
@@ -33,7 +34,7 @@ public class LoginScreen {
         root.getStyleClass().add("login-container");
 
         // Logo (headtext.png)
-        Image image = new Image(HelloApplication.class.getResourceAsStream("register2.png"));
+        Image image = new Image(BankingApplication.class.getResourceAsStream("register2.png"));
         ImageView logoView = new ImageView(image);
         logoView.setPreserveRatio(true);
         logoView.setFitWidth(250);
@@ -66,9 +67,9 @@ public class LoginScreen {
 
         // Create scene - Use consistent dimensions
         Scene scene = new Scene(root, 500, 550);
-        scene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+        scene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
 
-        // Configure stage
+        // Configures stage
         stage.setTitle("Farmingdale Checks - Login");
         stage.setScene(scene);
         stage.setResizable(false);
@@ -84,26 +85,29 @@ public class LoginScreen {
             return;
         }
 
-        // --- Call Mock Service for Authentication ---
-        User authenticatedUser = 
-            MockCheckService.authenticateUser(email, password);
+        // Ensure the user is authenticated
+        try {
+            User authenticatedUser = DatabaseManager.authenticateUser(email, password);
 
-        if (authenticatedUser != null) {
-            System.out.println("Login successful for: " + email);
-            // Simulate successful login
-            showBankingScreen(authenticatedUser.username()); // Pass authenticated username
-        } else {
-            System.out.println("Login failed for: " + email);
-            showAlert("Login Failed", "Invalid email or password.", Alert.AlertType.ERROR);
+            if (authenticatedUser != null) {
+                System.out.println("Login successful for: " + authenticatedUser.username());
+                showBankingScreen(authenticatedUser.username()); // Pass authenticated username
+            } else {
+                System.out.println("Login failed for: " + email);
+                showAlert("Login Failed", "Invalid email or password.", Alert.AlertType.ERROR);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Database error during login for user: " + email + " - " + e.getMessage());
+            showAlert("Login Error", "A database error occurred. Please try again later.", Alert.AlertType.ERROR);
         }
         // TODO: Remove this once DB is implemented
          // Pass email to next screen
-        // showBankingScreen(email);
     }
 
     private void showBankingScreen(String username) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("banking.fxml"));
+            FXMLLoader loader = new FXMLLoader(BankingApplication.class.getResource("banking.fxml"));
             BorderPane bankingRoot = loader.load();
 
             BankingController controller = loader.getController();
@@ -111,7 +115,7 @@ public class LoginScreen {
 
             // Create scene with explicit dimensions
             Scene bankingScene = new Scene(bankingRoot, 500, 700);
-            bankingScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+            bankingScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
 
             stage.setScene(bankingScene);
             stage.setTitle("Farmingdale Checks - Account: " + username);

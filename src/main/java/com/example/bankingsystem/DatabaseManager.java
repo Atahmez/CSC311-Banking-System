@@ -9,6 +9,7 @@ import java.util.function.BiConsumer;
 import com.example.bankingsystem.model.SavedReportData;
 import com.example.bankingsystem.model.CheckData;
 import com.example.bankingsystem.model.SavedReportData;
+import com.example.bankingsystem.model.User;
 /** Handles connection & schema setup for the SQLite database. */
 public final class DatabaseManager {
 
@@ -277,5 +278,59 @@ public final class DatabaseManager {
             int affectedRows = pstmt.executeUpdate();
             return affectedRows > 0;
         }
+    }
+
+    public static User authenticateUser(String username, String plainTextPassword) throws SQLException {
+        String sql = "SELECT password_hash, created_at FROM users WHERE username = ?";
+        try (Connection conn = getConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, username);
+            try (java.sql.ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    String storedPasswordHash = rs.getString("password_hash");
+                    String createdAtStr = rs.getString("created_at");
+                    java.time.LocalDateTime createdAt = java.time.LocalDateTime.parse(createdAtStr);
+
+                    // --- Placeholder for password hashing --- 
+                    // In a real application, use a strong hashing algorithm (e.g., BCrypt)
+                    // to hash plainTextPassword and compare with storedPasswordHash.
+                    String simulatedInputHash = plainTextPassword + "_hashed"; // Simulate hashing
+
+                    if (simulatedInputHash.equals(storedPasswordHash)) {
+                        return new User(username, storedPasswordHash, createdAt);
+                    }
+                }
+            }
+        }
+        return null; // User not found or password incorrect
+    }
+
+    public static User registerUser(String username, String plainTextPassword) throws SQLException {
+        // --- Placeholder for password hashing ---
+        // In a real application, use a strong hashing algorithm (e.g., BCrypt)
+        String hashedPassword = plainTextPassword + "_hashed"; // Simulate hashing
+        String createdAt = java.time.LocalDateTime.now().toString();
+
+        String sql = "INSERT INTO users (username, password_hash, created_at) VALUES (?, ?, ?)";
+
+        try (Connection conn = getConnection();
+             java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, username);
+            pstmt.setString(2, hashedPassword);
+            pstmt.setString(3, createdAt);
+            int affectedRows = pstmt.executeUpdate();
+            if (affectedRows > 0) {
+                return new User(username, hashedPassword, java.time.LocalDateTime.parse(createdAt));
+            }
+        } catch (SQLException e) {
+            // Check if the error is due to a unique constraint violation (username already exists)
+            if (e.getErrorCode() == 19 && e.getMessage().contains("UNIQUE constraint failed: users.username")) {
+                // This specific error code 19 and message is for SQLite. 
+                // For other databases, the error code and message might differ.
+                return null; // Indicate username already exists
+            }
+            throw e; // Re-throw other SQLExceptions
+        }
+        return null; // Should not be reached if insert succeeds or known error is handled
     }
 }

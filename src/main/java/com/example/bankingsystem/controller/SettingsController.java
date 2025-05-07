@@ -1,7 +1,7 @@
 package com.example.bankingsystem.controller;
 
 import com.example.bankingsystem.BankingController;
-import com.example.bankingsystem.HelloApplication;
+import com.example.bankingsystem.BankingApplication;
 import com.example.bankingsystem.screens.LoginScreen;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -77,12 +77,12 @@ public class SettingsController {
 
     private void navigateToDashboard() {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("banking.fxml"));
+            FXMLLoader loader = new FXMLLoader(BankingApplication.class.getResource("banking.fxml"));
             Parent bankingRoot = loader.load();
             BankingController controller = loader.getController();
             controller.setUser(currentUsername);
             Scene bankingScene = new Scene(bankingRoot, 500, 700);
-            bankingScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+            bankingScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
             stage.setScene(bankingScene);
             stage.setTitle("Farmingdale Checks - Account: " + currentUsername);
             stage.setResizable(true);

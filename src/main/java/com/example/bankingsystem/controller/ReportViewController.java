@@ -1,7 +1,7 @@
 package com.example.bankingsystem.controller;
 
 import com.example.bankingsystem.BankingController;
-import com.example.bankingsystem.HelloApplication;
+import com.example.bankingsystem.BankingApplication;
 import com.example.bankingsystem.model.CheckData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -114,14 +114,14 @@ public class ReportViewController {
     private void handleBackToGenerator() {
         // Navigate back to the report generation screen
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("generate_report.fxml"));
+            FXMLLoader loader = new FXMLLoader(BankingApplication.class.getResource("generate_report.fxml"));
             Parent reportGenRoot = loader.load();
 
             GenerateReportController controller = loader.getController();
             controller.initializeData(stage, currentUsername);
 
             Scene reportGenScene = new Scene(reportGenRoot, 500, 700);
-            reportGenScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+            reportGenScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
 
             stage.setScene(reportGenScene);
             stage.setTitle("Farmingdale Checks - Generate Report"); 
@@ -140,12 +140,12 @@ public class ReportViewController {
        System.out.println("Back to dashboard clicked from report view");
        // Use the navigateToDashboard logic from other controllers
        try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("banking.fxml"));
+            FXMLLoader loader = new FXMLLoader(BankingApplication.class.getResource("banking.fxml"));
             Parent bankingRoot = loader.load(); 
             BankingController controller = loader.getController();
             controller.setUser(currentUsername);
             Scene bankingScene = new Scene(bankingRoot, 500, 700); 
-            bankingScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+            bankingScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
             stage.setScene(bankingScene);
             stage.setTitle("Farmingdale Checks - Account: " + currentUsername); 
             stage.setResizable(true);

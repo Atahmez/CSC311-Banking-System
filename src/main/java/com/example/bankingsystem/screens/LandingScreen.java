@@ -1,6 +1,6 @@
 package com.example.bankingsystem.screens;
 
-import com.example.bankingsystem.HelloApplication;
+import com.example.bankingsystem.BankingApplication;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -58,7 +58,7 @@ public class LandingScreen {
 
         // Create scene
         Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+        scene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
 
         // Configure stage
         stage.setTitle("Farmingdale Checks - Portal");

@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="720c95cc-c251-43f1-9ba6-032b9f6df764" name="Changes" comment="Implement splash screen, welcome page, and login navigation flow" />
+    <list default="true" id="720c95cc-c251-43f1-9ba6-032b9f6df764" name="Changes" comment="Implement splash screen, welcome page, and login navigation flow">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/BankingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/GenerateReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/GenerateReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/ManualCheckEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/ManualCheckEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/ReportViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/ReportViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/SavedReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/SavedReportsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/controller/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/LandingScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/LandingScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/LoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/LoginScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/RegistrationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankingsystem/screens/RegistrationScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/banking.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/farmingdalechecks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/generate_report.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/head.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/headtext.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/login-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/manual_check_entry.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/register-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/register.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/register2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/report_view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/saved_reports.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/settings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/splash.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/splashscreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/bankingsystem/welcome.fxml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,12 +82,8 @@
     &quot;accountId&quot;: &quot;7b2fb76d-12bb-44c3-82fc-788d3111afeb&quot;
   }
 }</component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -63,33 +94,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BankingApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Database Script..executor&quot;: &quot;Run&quot;,
-    &quot;Database Script.console_1.sql.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BankingApplication.executor": "Run",
+    "Database Script..executor": "Run",
+    "Database Script.console_1.sql.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/chriscarroll/IdeaProjects/bank/csc311-bankingsystem2/CSC311-Banking-System",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;72e702a9-6646-496f-8001-b53586558993&quot;
+    "RunConfigurationTargetLRU": [
+      "72e702a9-6646-496f-8001-b53586558993"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/bankingsystem" />
@@ -104,7 +139,7 @@
     </configuration>
     <configuration name="BankingApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.bankingsystem.BankingApplication" />
-      <module name="CSC311-BankingSystem" />
+      <module name="CSC311-Banking-System" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.bankingsystem.*" />

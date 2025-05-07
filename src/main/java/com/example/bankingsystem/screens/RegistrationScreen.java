@@ -1,8 +1,7 @@
 package com.example.bankingsystem.screens;
 
-import com.example.bankingsystem.HelloApplication;
+import com.example.bankingsystem.BankingApplication;
 import com.example.bankingsystem.model.User;
-import com.example.bankingsystem.service.MockCheckService;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -11,6 +10,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import com.example.bankingsystem.DatabaseManager;
+import java.sql.SQLException;
 
 public class RegistrationScreen {
 
@@ -31,7 +32,7 @@ public class RegistrationScreen {
         root.getStyleClass().add("registration-container");
 
         // Logo Image (replaces title label)
-        Image image = new Image(HelloApplication.class.getResourceAsStream("register2.png"));
+        Image image = new Image(BankingApplication.class.getResourceAsStream("register2.png"));
         ImageView logoView = new ImageView(image);
         logoView.setPreserveRatio(true);
         logoView.setFitWidth(250);
@@ -69,7 +70,7 @@ public class RegistrationScreen {
 
         // Create scene - Use consistent dimensions
         Scene scene = new Scene(root, 500, 550);
-        scene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+        scene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
 
         // Configure stage
         stage.setTitle("Farmingdale Checks - Register");
@@ -112,17 +113,25 @@ public class RegistrationScreen {
         // TODO: Add password complexity checks if desired
 
         // --- Call Mock Service for Registration ---
-        User registeredUser = MockCheckService.registerUser(email, password);
+        // User registeredUser = MockCheckService.registerUser(email, password);
 
-        if (registeredUser != null) {
-            System.out.println("Registration successful for: " + email);
-            showAlert("Registration Successful", "Account created successfully! You can now log in.", Alert.AlertType.INFORMATION);
-            // Navigate back to Login Screen after successful registration
-            showLoginScreen();
-        } else {
-            // Registration failed (likely username already exists in the mock service)
-            System.out.println("Registration failed for: " + email);
-            showAlert("Registration Failed", "This email address is already registered.", Alert.AlertType.ERROR);
+        try {
+            User registeredUser = DatabaseManager.registerUser(email, password);
+
+            if (registeredUser != null) {
+                System.out.println("Registration successful for: " + registeredUser.username());
+                showAlert("Registration Successful", "Account created successfully! You can now log in.", Alert.AlertType.INFORMATION);
+                // Navigate back to Login Screen after successful registration
+                showLoginScreen();
+            } else {
+                // Registration failed (likely username already exists in the mock service)
+                System.out.println("Registration failed for: " + email + " (username might already exist).");
+                showAlert("Registration Failed", "This email address is already registered.", Alert.AlertType.ERROR);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Database error during registration for user: " + email + " - " + e.getMessage());
+            showAlert("Registration Error", "A database error occurred during registration. Please try again later.", Alert.AlertType.ERROR);
         }
     }
 

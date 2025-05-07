@@ -64,7 +64,7 @@ public class BankingController {
         System.out.println("New Check Entry clicked");
         try {
             // Load the Manual Check Entry FXML
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("manual_check_entry.fxml"));
+            FXMLLoader loader = new FXMLLoader(BankingApplication.class.getResource("manual_check_entry.fxml"));
             Parent manualCheckRoot = loader.load();
 
             // Get the controller and pass data
@@ -75,7 +75,7 @@ public class BankingController {
 
             // Create and set the new scene
             Scene manualCheckScene = new Scene(manualCheckRoot, 500, 700);
-            manualCheckScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+            manualCheckScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
             stage.setScene(manualCheckScene);
             stage.setTitle("Farmingdale Checks - Manual Check Entry");
             stage.setResizable(true);
@@ -93,7 +93,7 @@ public class BankingController {
         System.out.println("Generate Report clicked");
         try {
             // Load the Generate Report FXML
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("generate_report.fxml"));
+            FXMLLoader loader = new FXMLLoader(BankingApplication.class.getResource("generate_report.fxml"));
             Parent reportRoot = loader.load();
 
             // Get the controller and pass data
@@ -103,7 +103,7 @@ public class BankingController {
 
             // Create and set the new scene
             Scene reportScene = new Scene(reportRoot, 500, 700);
-            reportScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+            reportScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
             stage.setScene(reportScene);
             stage.setTitle("Farmingdale Checks - Generate Report");
             stage.setResizable(true);
@@ -120,7 +120,7 @@ public class BankingController {
     private void handleSavedReports() {
         System.out.println("Saved Reports clicked");
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("saved_reports.fxml"));
+            FXMLLoader loader = new FXMLLoader(BankingApplication.class.getResource("saved_reports.fxml"));
             Parent savedReportsRoot = loader.load();
 
             SavedReportsController controller = loader.getController();
@@ -128,7 +128,7 @@ public class BankingController {
             controller.initializeData(stage, currentUsername); 
 
             Scene savedReportsScene = new Scene(savedReportsRoot, 500, 700);
-            savedReportsScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+            savedReportsScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
             stage.setScene(savedReportsScene);
             stage.setTitle("Farmingdale Checks - Saved Reports");
             stage.setResizable(true); 
@@ -145,7 +145,7 @@ public class BankingController {
     private void handleSettings() {
         System.out.println("Settings clicked");
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("settings.fxml"));
+            FXMLLoader loader = new FXMLLoader(BankingApplication.class.getResource("settings.fxml"));
             Parent settingsRoot = loader.load();
 
             SettingsController controller = loader.getController();
@@ -153,7 +153,7 @@ public class BankingController {
             controller.initializeData(stage, currentUsername); 
 
             Scene settingsScene = new Scene(settingsRoot, 500, 700);
-            settingsScene.getStylesheets().add(HelloApplication.class.getResource("styles.css").toExternalForm());
+            settingsScene.getStylesheets().add(BankingApplication.class.getResource("styles.css").toExternalForm());
             stage.setScene(settingsScene);
             stage.setTitle("Farmingdale Checks - Settings");
             stage.setResizable(true); 
