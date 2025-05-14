@@ -26,17 +26,66 @@
                 <Insets top="30" right="40" bottom="30" left="40"/>
             </padding>
 
+            <!-- Account Settings Section -->
+            <Label text="Account Settings" styleClass="section-header"/>
+
+            <!-- Change Password Button -->
+            <Button fx:id="changePasswordButton" text="Change Password" onAction="#handleChangePassword"
+                    styleClass="settings-button" maxWidth="Infinity"/>
+
+            <!-- Update Contact Info Button -->
+            <Button fx:id="updateContactButton" text="Update Contact Information" onAction="#handleUpdateContact"
+                    styleClass="settings-button" maxWidth="Infinity"/>
+
+            <!-- Notification Settings Section -->
+            <Label text="Notifications" styleClass="section-header" style="-fx-padding: 15 0 0 0;"/>
+
+            <!-- Email Notifications Toggle -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Email Notifications" />
+                <Region HBox.hgrow="ALWAYS" />
+                <CheckBox fx:id="emailNotificationsCheckbox" selected="true" onAction="#handleEmailNotifications"/>
+            </HBox>
+
+            <!-- SMS Notifications Toggle -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="SMS Notifications" />
+                <Region HBox.hgrow="ALWAYS" />
+                <CheckBox fx:id="smsNotificationsCheckbox" selected="false" onAction="#handleSmsNotifications"/>
+            </HBox>
+
+            <!-- About Section -->
+            <Label text="About" styleClass="section-header" style="-fx-padding: 15 0 0 0;"/>
+
+            <!-- App Version Info -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="App Version" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label text="1.0.0" />
+            </HBox>
+
+            <!-- Account Actions Section -->
+            <Label text="Account Actions" styleClass="section-header" style="-fx-padding: 15 0 0 0;"/>
+
             <!-- Logout Button -->
-            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" 
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout"
                     styleClass="primary-button" maxWidth="Infinity"/>
-            
+
             <!-- Delete Account Button -->
-            <Button fx:id="deleteAccountButton" text="Delete Account" onAction="#handleDeleteAccount" 
+            <Button fx:id="deleteAccountButton" text="Delete Account" onAction="#handleDeleteAccount"
                     styleClass="destructive-button" maxWidth="Infinity"/>
-            
-            <!-- Add other settings options here later if needed -->
 
         </VBox>
     </center>
 
-</BorderPane> 
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER" styleClass="footer" spacing="10">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="© 2025 Banking System" styleClass="footer-text"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
